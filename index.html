@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartTrip AI</title>
+  <style>
+    :root {
+      --primary: #0e76a8;
+      --accent: #ffcb05;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+      color: #333;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      background: linear-gradient(135deg, #ffffff, #f3f9ff);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+      text-align: center;
+      max-width: 90%;
+      animation: fadeSlideIn 0.6s ease forwards;
+    }
+    .popup h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .popup p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .popup button {
+      padding: 12px 28px;
+      background-color: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .popup button:hover {
+      background-color: #ffb300;
+    }
+    @keyframes fadeSlideIn {
+      0% {opacity: 0; transform: translate(-50%, -60%) scale(0.8);}
+      100% {opacity: 1; transform: translate(-50%, -50%) scale(1);}
+    }
+    .hidden {
+      display: none !important;
+    }
+    .main-content {
+      display: none;
+      padding: 30px;
+      text-align: center;
+      animation: fadeIn 0.6s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    section {
+      padding: 40px 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 10px;
+    }
+    .testimonial {
+      margin-top: 30px;
+      font-style: italic;
+      background: #fff;
+      padding: 20px;
+      border-left: 5px solid var(--primary);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+    .gallery img {
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .form-link-button {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      margin-top: 20px;
+    }
+    .form-link-button:hover {
+      background-color: #0b5f8a;
+    }
+  </style>
+</head>
+<body>
+  <div id="popup" class="popup">
+    <h2>🙏 Namaste India</h2>
+    <p><strong>Welcome to SmartTrip AI</strong><br>We don't just plan trips – <em>we craft your journey</em> 🧳🌏</p>
+    <p>Let us take you across India – the Smart Way!</p>
+    <button id="exploreBtn">Let's Explore</button>
+  </div>
+
+  <div id="mainContent" class="main-content">
+    <h1>SmartTrip AI</h1>
+    <p>Your smart travel planner starts here.</p>
+
+    <section class="gallery">
+      <img src="https://www.clubmahindra.com/blog/media/section_images/delhitouri-ca7b25a36acac99.jpg" alt="Delhi">
+      <img src="https://media.cntraveller.in/wp-content/uploads/2016/10/arambol.jpg" alt="Goa">
+      <img src="https://tfipost.com/wp-content/uploads/2023/03/Must-Visit-Beautiful-places-in-Shimla-1-750x422.jpg" alt="Shimla">
+      <img src="https://www.elivestory.com/wp-content/uploads/2017/10/Visit-in-Bangalore-1024x576.jpg" alt="Bangalore">
+      <img src="https://wandersky.in/wp-content/uploads/2024/12/solang-valley.jpg" alt="Manali">
+      <img src="https://indiano.travel/wp-content/uploads/2022/05/Beautiful-View-of-Lake-Pichola-with-Jag-Mandir.jpg" alt="Udaipur">
+    </section>
+
+    <section>
+      <h2>Why Choose Us?</h2>
+      <p>✔️ Personalized plans using AI<br>✔️ Budget-friendly curated trips<br>✔️ Explore top 10 cities in India with local insights</p>
+    </section>
+
+    <section>
+      <h2>What People Say</h2>
+      <div class="testimonial">“Even though they’re new, the idea is 🔥 and I can’t wait to try this for my next trip!”</div>
+    </section>
+
+    <section>
+      <h2>Share Your Thoughts</h2>
+      <p>We’d love your feedback on SmartTrip!</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgY-ARnxXyasmFhRQkPfIkqWH9r9yP736faTcFj48r3Z2dwA/viewform?usp=sf_link" target="_blank" class="form-link-button">Fill the Feedback Form</a>
+    </section>
+
+    <section>
+  <h2>Contact Us</h2>
+  <p><strong>Co-Founders:</strong></p>
+  <p>Shivam Gupta — <a href="mailto:shivamguptagg000@gmail.com">shivamguptagg000@gmail.com</a> — 📞 7906718736</p>
+  <p>Utkarsh Singh — <a href="mailto:utkarshsinghshrinet8400@gmail.com">utkarshsinghshrinet8400@gmail.com</a> — 📞 9219526862</p>
+</section>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const exploreBtn = document.getElementById("exploreBtn");
+      const popup = document.getElementById("popup");
+      const mainContent = document.getElementById("mainContent");
+
+      if (exploreBtn && popup && mainContent) {
+        exploreBtn.addEventListener("click", () => {
+          popup.style.display = "none";
+          mainContent.classList.remove("hidden");
+          mainContent.style.display = "block";
+        });
+      } else {
+        console.error("Popup or mainContent not found!");
+      }
+    });
+  </script>
+</body>
+</html>
