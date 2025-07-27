@@ -23,11 +23,15 @@
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+    }
     body {
       background: linear-gradient(135deg, #e0f7fa, #fce4ec);
       color: #333;
-      overflow-x: hidden;
-      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     .popup {
       position: fixed;
@@ -36,20 +40,21 @@
       transform: translate(-50%, -50%) scale(1);
       background: linear-gradient(135deg, #ffffff, #f3f9ff);
       border-radius: 16px;
-      padding: 40px;
+      padding: 5vw;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
       z-index: 999;
       text-align: center;
-      max-width: 90%;
+      width: 90%;
+      max-width: 600px;
       animation: fadeSlideIn 0.6s ease forwards;
     }
     .popup h2 {
-      font-size: 2.5rem;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
       color: var(--primary);
       margin-bottom: 10px;
     }
     .popup p {
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 2.5vw, 1.1rem);
       margin-bottom: 20px;
     }
     .popup button {
@@ -77,6 +82,7 @@
       padding: 30px;
       text-align: center;
       animation: fadeIn 0.6s ease forwards;
+      flex-grow: 1;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
@@ -139,6 +145,9 @@
     👉 Please explore what we’re building and fill out the feedback form to support our launch!</p>
     <button id="exploreBtn">Let's Explore</button>
   </div>
+
+  <div id="mainContent" class="main-content hidden">
+
 
   <div id="mainContent" class="main-content">
     <h1>Trip NestAI</h1>
